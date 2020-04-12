@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MagicCardo</title>
+
+    <link rel = "stylesheet" href="./style/style.css">
+</head>
+<body>
+
+<div id="mainView">
+    <h1>MagicCardo - an awesome find pair game</h1>
+    <div id="mainMenu">
+        <button class="gameSelectBtn" id="recordsBtn">Records</button>
+        <button class="gameSelectBtn" id="playBtn">Play!</button>
+    </div>
+</div>
+
+<div id="gameView">
+    <button class="backBtn" id="backBtn0">Back</button>
+    <h1> Choose difficult </h1>
+    <div id="difficultMenu">
+        <button id="easy">Easy</button>
+        <button id="medium">Medium</button>
+        <button id="hard">Hard</button>
+        <button>Custom</button>
+    </div>
+    <button id="startGameBtn">Play</button>
+    <div id="playArea">
+        <div id= "playField"></div>
+        <div id="deckPlaceHolder"></div>
+    </div>
+</div>
+
+<div id="recordView">
+    <button class="backBtn" id="backBtn1">Back</button>
+    <ul id="recordList"></ul>
+</div>
+
+
+<script src = "./dist/index.js"></script>
+</body>
+</html>

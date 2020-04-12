@@ -1,0 +1,95 @@
+
+/* General */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("../img/siteBack.jpg");
+    background-size: 100% 100%;
+    font-family: 'CustomFont', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    border: black solid 2px;
+    font-family: 'CustomFont', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+    font-size:25px;
+}
+
+.backBtn {
+    width: 150px;
+    height: 50px;
+}
+
+#mainMenu
+{
+    display: grid;
+    grid-gap:15px;
+    justify-content: center;
+}
+
+/* mainView */
+
+.gameSelectBtn {
+    width: 400px;
+    height: 250px;
+}
+
+/* gameView */
+
+#gameView {
+    width:100%;
+    height:100%;
+    position: absolute;
+    visibility: hidden;
+    top:0;
+}
+
+#difficultMenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    margin-left: 15%;
+}
+
+#difficultMenu button {
+    width: 130px;
+    height:60px;
+}
+
+#startGameBtn {
+    background-color: aqua;
+    margin: 3% 0% 5% 5%;
+    width: 150px;
+    height:80px
+}
+
+#playArea {
+    margin: 0 auto 0 auto;
+    width: 75%;
+    height: 75%;
+    display:grid;
+    grid-template-columns: 3fr 273px;
+
+}
+
+#playField {
+    display: grid;
+}
+
+/* recordView */
+
+#recordView {
+    width:100%;
+    height:100%;
+    position: absolute;
+    visibility: hidden;
+    top:0;
+}
