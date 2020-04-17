@@ -83,25 +83,32 @@ function GameHelper() {
     gameStart = (playerName, dif, deck) => {
         moveCardsToPlayField(deck)
         let clickCounter = 0
+        let openCardCounter = 0
+        let idArray = []
         deck.forEach(card => {
             let divSelector = document.getElementById(card.div.id)
             divSelector.onclick = _ => {
-                clickCounter++
-                let idArray = []
-                let openCardCounter = 0
+                console.log(openCardCounter)
+                if (card.position) { clickCounter++;card.turnOver();openCardCounter--;idArray.pop();return }
+                if (openCardCounter == 2) return
+
                 card.turnOver()
-                deck.forEach(card => { if(card.position) { openCardCounter++; idArray.push(card.div.id) }})
+                idArray.push(card.div.id)
+                clickCounter++
+                openCardCounter++
+
                 if(openCardCounter == 2) {
                     let id0 = idArray.shift()
                     let id1 = idArray.shift()
                     if(id0.slice(0,-2) == id1.slice(0,-2)) {
-                        setTimeout(_=> removeCardPairById(id0,deck),1000)
-                        if(deck.length == 2){ setTimeout(_=>alert("Игра окончена! Проверьте страницу рекордов"),1005); recordStat(playerName,dif,clickCounter) }
-                    } else { setTimeout(_=> turnOverOpenCards(deck),1000) }
+                        setTimeout(_=> {removeCardPairById(id0,deck);openCardCounter = 0;},1000)
+                        if(deck.length == 2){ setTimeout(_=>alert("Игра окончена! Проверьте страницу рекордов"),1200); recordStat(playerName,dif,clickCounter) }
+                    } else { setTimeout(_=> {turnOverOpenCards(deck);openCardCounter = 0},1000);}
                 }
             }
         })
     }
+
     return {
         createCardPairs,
         prepareArea,
